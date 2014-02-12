@@ -52,9 +52,58 @@ void RORI::startServer()
     {
         QTextStream qout(stdout);
         qout << "Server is running\n";
-        //connect(server, SIGNAL(newConnection()), this, SLOT(newConnection()));
+        connect(server, SIGNAL(newConnection()), this, SLOT(newConnection()));
     }
 
     if(fail)
         exit(0);
+}
+
+/**
+ * @brief RORI::newConnection when a new client is connected
+ */
+void RORI::newConnection()
+{
+    QTcpSocket *newClient = server->nextPendingConnection();
+    clients << newClient;
+    connect(newClient, SIGNAL(readyRead()), this,SLOT(receiveData()));
+    connect(newClient, SIGNAL(disconnected()), this, SLOT(disconnectClient()));
+}
+
+/**
+ * @brief RORI::receiveData When the server receive data
+ */
+void RORI::receiveData()
+{
+    QTcpSocket *socket = qobject_cast<QTcpSocket *>(sender());
+    if (socket == 0)
+        return;
+    QDataStream in(socket);
+    QString message;
+    in >> message;
+    workData(message.trimmed());
+}
+
+/**
+ * @brief Server::disconnectClient When a client close the connection
+ */
+void RORI::disconnectClient()
+{
+    QTcpSocket *socket = qobject_cast<QTcpSocket *>(sender());
+
+    if (socket == 0)
+        return;
+
+    clients.removeOne(socket);
+    socket->deleteLater();
+}
+
+
+/**
+ * @brief RORI::workData Treat the message
+ * @param message send by the client
+ */
+void RORI::workData(QString message)
+{
+
 }

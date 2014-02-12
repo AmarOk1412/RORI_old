@@ -11,8 +11,15 @@ public:
     void welcomeMessage();
     void startServer();
 
+private slots:
+    void newConnection();
+    void receiveData();
+    void disconnectClient();
+    void workData(QString message);
+
 private:
     QTcpServer *server;
+    QList<QTcpSocket *> clients;
 };
 
 #endif // RORI_H
