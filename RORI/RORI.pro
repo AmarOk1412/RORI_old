@@ -16,7 +16,9 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    RORI.cpp
+    RORI.cpp \
+    UserProfil.cpp
 
 HEADERS += \
-    RORI.h
+    RORI.h \
+    UserProfil.h

@@ -16,6 +16,7 @@ private slots:
     void receiveData();
     void disconnectClient();
     void workData(QString message);
+    void sendAt(QString ip, QString port, QString messageToSend);
 
 private:
     QTcpServer *server;

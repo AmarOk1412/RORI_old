@@ -98,6 +98,27 @@ void RORI::disconnectClient()
     socket->deleteLater();
 }
 
+/**
+ * @brief RORI::sendAt
+ * @param ip
+ * @param port
+ * @param messageToSend
+ */
+void RORI::sendAt(QString ip, QString port, QString messageToSend)
+{
+    QTcpSocket *newSocket = new QTcpSocket;
+    newSocket->connectToHost(ip, port.toInt());
+    while(!newSocket->isOpen() && !newSocket->isValid() && !newSocket->isWritable())
+    {
+
+    }
+
+    QByteArray paquet;
+    QDataStream out(&paquet, QIODevice::WriteOnly);
+    out << messageToSend.trimmed();
+    newSocket->write(paquet);
+}
+
 
 /**
  * @brief RORI::workData Treat the message
