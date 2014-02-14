@@ -37,13 +37,6 @@ UserProfil::UserProfil()
         setName(profil.readLine().trimmed());
         setFirstName(profil.readLine().trimmed());
     }
-
-    QTextStream qout(stdout);
-    qout << "Bonjour " + getFirstName() + " " + getName() + "\n";
-
-    setAge(20);
-    setUCurious(23);
-    saveProfil();
 }
 
 /**
