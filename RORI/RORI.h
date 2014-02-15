@@ -3,6 +3,8 @@
 
 #include <QtNetwork>
 
+#include "Semantik.h"
+
 class RORI : public QObject
 {
     Q_OBJECT
@@ -30,6 +32,8 @@ private:
     QTcpSocket *socketAnswer;
     int time;
     QTimer *timer;
+
+    Semantik *semantik;
 };
 
 #endif // RORI_H

@@ -11,6 +11,9 @@ RORI::RORI()
     welcomeMessage();
     startServer();
 
+    semantik = new Semantik;
+    connect(semantik, SIGNAL(saySomething(QString)), this, SLOT(saySomething(QString)));
+
     socketAnswer = new QTcpSocket;
     connect(socketAnswer, SIGNAL(readyRead()), this, SLOT(receiveData()));
     connect(socketAnswer, SIGNAL(disconnected()), this, SLOT(disconnectClient()));
@@ -197,7 +200,8 @@ void RORI::ask()
  */
 void RORI::workData(QString message)
 {
-    Q_UNUSED(message)
-    //TODO: Connect with Client (init socketAnswer) + send to Semantik Class
+    //TODO: Connect with Client (init socketAnswer)
+
+    semantik->workData(message);
 }
 

@@ -18,9 +18,11 @@ TEMPLATE = app
 SOURCES += main.cpp \
     RORI.cpp \
     UserProfil.cpp \
-    RoriProfil.cpp
+    RoriProfil.cpp \
+    Semantik.cpp
 
 HEADERS += \
     RORI.h \
     UserProfil.h \
-    RoriProfil.h
+    RoriProfil.h \
+    Semantik.h
