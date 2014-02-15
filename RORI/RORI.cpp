@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 
+#include <qdebug.h>
+
 #include "RORI.h"
 
 
@@ -8,6 +10,11 @@ RORI::RORI()
 {
     welcomeMessage();
     startServer();
+
+    socketAnswer = new QTcpSocket;
+    connect(socketAnswer, SIGNAL(readyRead()), this, SLOT(receiveData()));
+    connect(socketAnswer, SIGNAL(disconnected()), this, SLOT(disconnectClient()));
+    connect(socketAnswer, SIGNAL(error(QAbstractSocket::SocketError)), this, SLOT(SocketError(QAbstractSocket::SocketError)));
 }
 
 /**
@@ -119,6 +126,70 @@ void RORI::sendAt(QString ip, QString port, QString messageToSend)
     newSocket->write(paquet);
 }
 
+/**
+ * @brief RORI::sendMessage send message to target
+ * @param target
+ * @param message
+ */
+void RORI::sendMessage(QTcpSocket *target, QString message)
+{
+    QByteArray packet;
+    QDataStream out(&packet, QIODevice::WriteOnly);
+    out << message.trimmed();//Add the message
+    //Send the message
+    target->write(packet);
+}
+
+/**
+ * @brief RORI::saySomething send message with socketAnswer
+ * @param message
+ */
+void RORI::saySomething(QString message)
+{
+    sendMessage(socketAnswer, message);
+}
+
+/**
+ * @brief RORI::SocketError if an error occurs
+ * @param error
+ */
+void RORI::SocketError(QAbstractSocket::SocketError error)
+{
+    switch(error)
+    {
+        case QAbstractSocket::HostNotFoundError:
+        qDebug("ERROR : No server found. Check IP and gate.");
+        break;
+        case QAbstractSocket::ConnectionRefusedError:
+        qDebug("ERROR : Server don't want to be connected with you. Check if the server is up, ip adress and gates.");
+        break;
+        case QAbstractSocket::RemoteHostClosedError:
+        qDebug("ERROR : Server disconnect.");
+        break;
+        default:
+        qDebug("ERROR : Unknown error");
+    }
+}
+
+/**
+ * @brief RORI::timeBeforeQuestion
+ * @return the time in ms before the new question
+ */
+int RORI::timeBeforeQuestion()
+{
+    return 5000*3600*exp(0-rand()%10);
+}
+
+/**
+ * @brief RORI::ask
+ */
+void RORI::ask()
+{
+    time = timeBeforeQuestion();
+    timer = new QTimer (this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(ask()));
+        timer->start(time);
+}
 
 /**
  * @brief RORI::workData Treat the message
@@ -126,5 +197,7 @@ void RORI::sendAt(QString ip, QString port, QString messageToSend)
  */
 void RORI::workData(QString message)
 {
-
+    Q_UNUSED(message)
+    //TODO: Connect with Client (init socketAnswer) + send to Semantik Class
 }
+
