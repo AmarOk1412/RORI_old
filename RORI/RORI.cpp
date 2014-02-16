@@ -26,7 +26,7 @@ RORI::RORI()
 void RORI::welcomeMessage()
 {
     QTextStream qout(stdout);
-    qout << "8888888b.       .d88888b.      8888888b.      8888888     \n"
+    qout << tr("8888888b.       .d88888b.      8888888b.      8888888     \n"
             "888   Y88b     d88P\" \"Y88b     888   Y88b       888       \n"
             "888    888     888     888     888    888       888       \n"
             "888   d88P     888     888     888   d88P       888       \n"
@@ -41,7 +41,7 @@ void RORI::welcomeMessage()
             "wtfpl : http://www.wtfpl.net/\n"
             "<3 making free projects\n"
             "=========================================================\n\n"
-            "RORI is starting...\n";
+            "RORI is starting...\n");
 }
 
 
@@ -55,13 +55,13 @@ void RORI::startServer()
     if (!server->listen(QHostAddress::Any, 1412))
     {
         QTextStream qout(stdout);
-        qout << "Server can't run\nExit\n";
+        qout << tr("Server can't run\nExit\n");
         fail = true;
     }
     else
     {
         QTextStream qout(stdout);
-        qout << "Server is running\n";
+        qout << tr("Server is running\n");
         connect(server, SIGNAL(newConnection()), this, SLOT(newConnection()));
     }
 
@@ -118,15 +118,23 @@ void RORI::sendAt(QString ip, QString port, QString messageToSend)
 {
     QTcpSocket *newSocket = new QTcpSocket;
     newSocket->connectToHost(ip, port.toInt());
-    while(!newSocket->isOpen() && !newSocket->isValid() && !newSocket->isWritable())
+
+    int i = 0;
+    while(!(newSocket->state() == QAbstractSocket::ConnectedState) && i < 150)
     {
-
+        ++i;
     }
-
-    QByteArray paquet;
-    QDataStream out(&paquet, QIODevice::WriteOnly);
-    out << messageToSend.trimmed();
-    newSocket->write(paquet);
+    if(newSocket->state() == QAbstractSocket::ConnectedState)
+    {
+        QByteArray paquet;
+        QDataStream out(&paquet, QIODevice::WriteOnly);
+        out << messageToSend.trimmed();
+        newSocket->write(paquet);}
+    else
+    {
+        QTextStream qout(stdout);
+        qout << tr("Could not connect to ") + ip + ':' + QString::number(port.toInt());
+    }
 }
 
 /**
@@ -201,7 +209,6 @@ void RORI::ask()
 void RORI::workData(QString message)
 {
     //TODO: Connect with Client (init socketAnswer)
-
     semantik->workData(message);
 }
 

@@ -1,5 +1,7 @@
 #include "Semantik.h"
 
+#include <QTextStream>
+
 Semantik::Semantik() : QObject()
 {
     classicPaths.append("/Regex/LDetermine/5");
@@ -101,5 +103,12 @@ void Semantik::delFilePath(QString path)
  */
 void Semantik::workData(QString message)
 {
-    Q_UNUSED(message);
+    if(message.indexOf("TCHAT:") == 0)
+    {
+        QString receivedMessage;
+        for(int i = 6; i < message.length(); ++i)
+            receivedMessage += message[i];
+        QTextStream qout(stdout);
+        qout << tr("Message Reçu : ") + receivedMessage;
+    }
 }
