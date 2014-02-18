@@ -19,10 +19,14 @@ SOURCES += main.cpp \
     RORI.cpp \
     UserProfil.cpp \
     RoriProfil.cpp \
-    Semantik.cpp
+    Semantik.cpp \
+    Profiler.cpp \
+    MemoryInterface.cpp
 
 HEADERS += \
     RORI.h \
     UserProfil.h \
     RoriProfil.h \
-    Semantik.h
+    Semantik.h \
+    Profiler.h \
+    MemoryInterface.h

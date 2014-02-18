@@ -18,6 +18,11 @@ RORI::RORI()
     connect(socketAnswer, SIGNAL(readyRead()), this, SLOT(receiveData()));
     connect(socketAnswer, SIGNAL(disconnected()), this, SLOT(disconnectClient()));
     connect(socketAnswer, SIGNAL(error(QAbstractSocket::SocketError)), this, SLOT(SocketError(QAbstractSocket::SocketError)));
+
+
+
+    semantik->workData("TCHAT:Comment ça va ?");
+
 }
 
 /**
