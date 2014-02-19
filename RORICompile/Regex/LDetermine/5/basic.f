@@ -1,2 +1,2 @@
 ^(salut|bonjour|bonsoir|hei)( rori|)$
-repliques/sayHello
+function/repliques/sayHello

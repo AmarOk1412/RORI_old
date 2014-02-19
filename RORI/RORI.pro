@@ -29,4 +29,5 @@ HEADERS += \
     RoriProfil.h \
     Semantik.h \
     Profiler.h \
-    MemoryInterface.h
+    MemoryInterface.h \
+    enumeration.h

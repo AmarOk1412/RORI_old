@@ -16,7 +16,7 @@ void MemoryInterface::sendCategorie()
 {
     QStringList categories;
     QString tempLine, fichier;
-    QFile arborescenceFile("BDD/arbo.txt");
+    QFile arborescenceFile("wordDir/arbo.txt");
     arborescenceFile.open(QIODevice::ReadWrite);
     if(arborescenceFile.isOpen())
     {
@@ -58,7 +58,7 @@ QStringList MemoryInterface::searchWord(QString mot1, QString mot2)
     mot2 = "/" + mot2;
     QStringList phrasesRecuperer;
     QStringList categories;
-    QFile arborescenceFile("BDD/arbo.txt");
+    QFile arborescenceFile("wordDir/arbo.txt");
     arborescenceFile.open(QIODevice::ReadWrite);
     QString line;
     if(arborescenceFile.isOpen())
@@ -177,9 +177,9 @@ void MemoryInterface::createSynonymeFile(QString path, QStringList synonymes)
  */
 QString MemoryInterface::moveFolder(QString folderToMove, QString intoThisFolder)
 {
-    QFile arborescenceFile("BDD/arbo.txt");
+    QFile arborescenceFile("wordDir/arbo.txt");
     arborescenceFile.open(QIODevice::ReadWrite);
-    QString line, pathOfIntoThisFolder = "BDD/";
+    QString line, pathOfIntoThisFolder = "wordDir/";
     if(arborescenceFile.isOpen())
     {
         while(!arborescenceFile.atEnd())
@@ -187,7 +187,7 @@ QString MemoryInterface::moveFolder(QString folderToMove, QString intoThisFolder
             line = arborescenceFile.readLine();
             if(line.indexOf(intoThisFolder) != -1)
             {
-                pathOfIntoThisFolder = "BDD/";
+                pathOfIntoThisFolder = "wordDir/";
                 for(int i = 0; i < line.indexOf(intoThisFolder) + intoThisFolder.length(); ++i)
                 {
                     pathOfIntoThisFolder += line[i];
@@ -213,9 +213,9 @@ QString MemoryInterface::moveFolder(QString folderToMove, QString intoThisFolder
  */
 void MemoryInterface::addPathToArboTxt(QString path, QStringList syn, QString intoThisFolder)
 {
-    QFile arborescenceFile("BDD/arbo.txt");
+    QFile arborescenceFile("wordDir/arbo.txt");
     arborescenceFile.open(QIODevice::ReadWrite);
-    QString line, pathOfIntoThisFolder = "BDD/", toWrite;
+    QString line, pathOfIntoThisFolder = "wordDir/", toWrite;
     bool contains = false, isWrite = false;
     if(arborescenceFile.isOpen())
     {

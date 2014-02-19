@@ -21,7 +21,7 @@ RORI::RORI()
 
 
 
-    semantik->workData("TCHAT:Comment ça va ?");
+    semantik->workData("TCHAT:Bonjour");
 
 }
 
