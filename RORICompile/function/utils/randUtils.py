@@ -20,7 +20,7 @@ def getRandomSound(nameFile):
     i = 0
     for line in fichier:
         i += 1
-    randLine = random.randint(1,i)
+    randLine = random.randint(0,i)
     fichier.close()
     fichier = open(nameFile)
     for j in range(0,randLine):
