@@ -1,6 +1,6 @@
 <html>
 <head>
-<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/styleLogin.css" />
 <title>RORI</title>
 </head>
 <body>
