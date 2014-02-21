@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical" >
+
+    <ImageButton
+        android:id="@+id/imageButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:contentDescription="@string/none"
+        android:src="@drawable/menu" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/littleSize" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/TextView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/licence"
+                android:textColor="@color/blanc" />
+
+            <TextView
+                android:id="@+id/TextView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/licencea"
+                android:textColor="@color/blanc" />
+
+            <TextView
+                android:id="@+id/TextView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/none" />
+
+            <TextView
+                android:id="@+id/TextView09"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/licenceb"
+                android:textColor="@color/blanc" />
+
+            <TextView
+                android:id="@+id/TextView08"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/licencec"
+                android:textColor="@color/blanc" />
+
+            <TextView
+                android:id="@+id/TextView07"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/licenced"
+                android:textColor="@color/blanc" />
+
+            <TextView
+                android:id="@+id/TextView06"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/none" />
+
+            <TextView
+                android:id="@+id/TextView05"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/licencee"
+                android:textColor="@color/blanc" />
+
+            <TextView
+                android:id="@+id/TextView04"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/none" />
+
+            <TextView
+                android:id="@+id/TextView03"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/licencef"
+                android:textColor="@color/blanc" />
+
+            <TextView
+                android:id="@+id/TextView02"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/none" />
+
+            <TextView
+                android:id="@+id/TextView01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/licenceg"
+                android:textColor="@color/blanc" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/licenceh"
+                android:textColor="@color/blanc" />
+
+            <TextView
+                android:id="@+id/TextView42"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/none" />
+
+            <TextView
+                android:id="@+id/TextView24"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/licencei"
+                android:textColor="@color/blanc" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

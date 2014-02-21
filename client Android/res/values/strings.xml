@@ -1,0 +1,31 @@
+<resources>
+
+    <string name="app_name">RORI</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="valider">OK</string>
+    <string name="none" />
+    <string name="licence">RORI est un chatterbot libre, open source, modulable et multi plateformes.</string>
+    <string name="licencea">Il permet de controler n\'importe quel objet d\'un smartphone a une maison equipee d\'un systeme domotique.</string>
+    <string name="licenceb">Licence : </string>
+    <string name="licencec"> DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE </string>
+    <string name="licenced">                    Version 2, December 2004 </string>
+    <string name="licencee"> Copyright &#169; 2013 BLIN Sébastien (amarok@enconn.fr) </string>
+    <string name="licencef"> Everyone is permitted to copy and distribute verbatim or modified copies of this license document, and changing it is allowed as long as the name is changed. </string>
+    <string name="licenceg">            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE </string>
+    <string name="licenceh">   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION </string>
+    <string name="licencei">  0. You just DO WHAT THE FUCK YOU WANT TO.</string>
+    <string name="_sdcard_download_roriandroid_txt">/sdcard/Download/RORIAndroid.txt</string>
+    <string name="_sdcard_download_roriandroidout_txt">/sdcard/Download/RORIAndroidOut.txt</string>
+
+
+    <color name="transparent">#0000</color>
+    <color name="bleuFonce">#01617a</color>
+    <color name="bleuClair">#2e97b1</color>
+    <color name="blanc">#ffffff</color>
+
+    <string name="nomRORI">BOT RORI</string>
+    <string name="littleSentence">Really Obvious Really Intelligent</string>
+    <string name="Back">BACK</string>
+
+</resources>
