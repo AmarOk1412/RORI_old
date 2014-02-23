@@ -18,7 +18,6 @@ public:
     QStringList getWords(QString sentence);
     QStringList setCategoriesWords(QStringList words);
     QStringList setTypesWords(QStringList words);
-    void addNewFilePath(QString newPath);
     void delFilePath(QString path);
 
 signals:
@@ -26,6 +25,8 @@ signals:
 
 private slots:
     void saySomethingSlot(QString toSay);
+    void sayEverything(QString message);
+    void addNewFilePath(QString newPath);
 
 private:
     QStringList activePaths;

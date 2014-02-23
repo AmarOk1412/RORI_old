@@ -19,10 +19,6 @@ RORI::RORI()
     connect(socketAnswer, SIGNAL(disconnected()), this, SLOT(disconnectClient()));
     connect(socketAnswer, SIGNAL(error(QAbstractSocket::SocketError)), this, SLOT(SocketError(QAbstractSocket::SocketError)));
 
-
-
-    semantik->workData("TCHAT:Bonjour");
-
 }
 
 /**
@@ -162,6 +158,8 @@ void RORI::sendMessage(QTcpSocket *target, QString message)
  */
 void RORI::saySomething(QString message)
 {
+    QTextStream qout(stdout);
+    qout << message;
     sendMessage(socketAnswer, message);
 }
 
@@ -213,7 +211,22 @@ void RORI::ask()
  */
 void RORI::workData(QString message)
 {
-    //TODO: Connect with Client (init socketAnswer)
-    semantik->workData(message);
+    if(message.indexOf("NewTchat:") == 0)
+    {
+        int sep = message.indexOf("-|-");;
+        QString ip = "";
+        QString port = "";
+        for(int i = 9; i < sep; ++i)
+        {
+            ip += message[i];
+        }
+        for(int i = sep+3; i < message.length(); ++i)
+        {
+            port += message[i];
+        }
+        socketAnswer->connectToHost(ip, port.toInt());
+    }
+    else
+        semantik->workData(message);
 }
 

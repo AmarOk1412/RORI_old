@@ -8,6 +8,12 @@ Semantik::Semantik() : QObject()
     profiler = new Profiler;
     memInt = new MemoryInterface;
 
+    connect(profiler, SIGNAL(endOfTreatment(QString)), this, SLOT(sayEverything(QString)));
+    connect(profiler, SIGNAL(newPath(QString)), this, SLOT(addNewFilePath(QString)));
+    //connect(profiler, SIGNAL(delPro(QString)), this, SLOT(delPro(QString)));
+    //connect(profiler, SIGNAL(newWord(QString)), this, SLOT(addNewWord(QString)));
+    //connect(profiler, SIGNAL(newFunc()), this, SLOT(addNewFunc()));
+
     classicPaths.append("Regex/LDetermine/5");
     classicPaths.append("Regex/LDetermine/10");
     classicPaths.append("Regex/LDetermine/15");
@@ -122,6 +128,15 @@ QStringList Semantik::setTypesWords(QStringList words)
 void Semantik::addNewFilePath(QString newPath)
 {
     activePaths.append(newPath);
+}
+
+/**
+ * @brief Semantik::sayEverything
+ * @param message
+ */
+void Semantik::sayEverything(QString message)
+{
+    emit saySomething(message);
 }
 
 //TODO : del path into activPaths

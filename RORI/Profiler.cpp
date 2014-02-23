@@ -254,15 +254,16 @@ void Profiler::readEnd()
                     if(!toSay.isEmpty())
                     {
                         saluer = true;
-                        QFile history("history");
+                        QFile history("files/history");
                         if(!history.exists())
                         {
-                            history.open(QIODevice::ReadWrite);
+                            history.open(QIODevice::WriteOnly);
                             history.close();
                         }
                         QTextStream out(&history);
                         history.open(QIODevice::Append);
-                        out << "\nRORI : " + toSay;
+                        if(history.isOpen())
+                            out << "\nRORI : " + toSay;
                         emit endOfTreatment("RORISAY:" + toSay);
                     }
                 }
