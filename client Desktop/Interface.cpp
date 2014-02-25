@@ -81,7 +81,7 @@ void Interface::setupConnexions()
     connect(optionWidget, SIGNAL(backgroundImageChanged(QString)), this, SLOT(changeBGImage(QString)));
     connect(optionWidget, SIGNAL(color1Change(QString)), this, SLOT(changeColor1(QString color1)));
     connect(optionWidget, SIGNAL(color2Change(QString)), this, SLOT(changeColor2(QString color2)));
-    connect(roriWidget, SIGNAL(envoyerClicked()), this, SLOT(sendClicked()));
+    connect(roriWidget, SIGNAL(sendClicked()), this, SLOT(sendClicked()));
 }
 
 /**
@@ -195,7 +195,7 @@ void Interface::onTimerFinish()
 }
 
 /**
- * @brief Interface::sendClicked when we click on envoyer
+ * @brief Interface::sendClicked when we click on send
  */
 void Interface::sendClicked()
 {
