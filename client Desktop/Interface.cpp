@@ -51,8 +51,8 @@ void Interface::setupUi()
     optionWidget = new OptionWidget(this);
     optionWidget->hide();
 
-    color1 = optionWidget->getApparenceRORI()->getColor1();
-    color2 = optionWidget->getApparenceRORI()->getColor2();
+    color1 = optionWidget->getAppearanceRORI()->getColor1();
+    color2 = optionWidget->getAppearanceRORI()->getColor2();
 
     roriWidget->setColor1(color1);
     roriWidget->setColor2(color2);
