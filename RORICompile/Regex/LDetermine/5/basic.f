@@ -4,3 +4,5 @@ function/repliques/sayHello
 function/repliques/sayGoodbye
 (é|e)cran.noir|black.screen|sleep|dor(s|t)
 function/repliques/blackScreen
+(^sourdine$|^muet$|^mute$|^coupe le son$|^no sound please$)
+function/repliques/mute
