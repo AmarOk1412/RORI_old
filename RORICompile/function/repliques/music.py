@@ -10,7 +10,7 @@ import endFileUtils
 
 stop = False
 for arg in sys.argv:
-    if arg is '-s':
+    if arg == 'stop':
         stop = True
 
 if not stop :

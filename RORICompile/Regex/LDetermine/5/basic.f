@@ -9,6 +9,6 @@ function/repliques/mute
 (ver(r|)ouil(l|)(e (l.ordi|le pc|l'(é|e)cran|toi)|age)|bloque.toi)|^lock
 function/repliques/lock
 ^stop.{0,20}musi(c|que)
-function/repliques/stopMusic
+function/repliques/music --SENTENCESEND--
 ^(joue de la |lance.{0,20}|met.{0,20}|)musi(c|que)
-function/repliques/music
+function/repliques/music --SENTENCESEND--

@@ -35,7 +35,7 @@ void RORIWidget::RORISay(QString toSay)
     texte += "<p style=\"color:#FFF; background-color:" + color2 + "; width:100%; font-size:20px;margin-bottom:10px;\"><center>"+ toSay +"</center></p>";
     lyrics->setText(texte);
     lyrics->verticalScrollBar()->setValue(lyrics->verticalScrollBar()->maximum());
-    QProcess::startDetached("python tts.py " + toSay);
+    QProcess::startDetached("python tts/tts.py " + toSay);
 }
 
 /**
