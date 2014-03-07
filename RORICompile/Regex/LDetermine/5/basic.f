@@ -12,3 +12,5 @@ function/repliques/lock
 function/repliques/music --SENTENCESEND--
 ^(joue de la |lance.{0,20}|met.{0,20}|)musi(c|que)
 function/repliques/music --SENTENCESEND--
+(ouvre|lance|run|exec).{0,30}--LOGICIEL--
+function/repliques/execSoft
