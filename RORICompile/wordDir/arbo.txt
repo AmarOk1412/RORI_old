@@ -23,6 +23,8 @@ abstrait/insulte/salope
 abstrait/insulte/tg
 abstrait/politesse
 abstrait/logiciel/arduino
+abstrait/logiciel/firefox
+abstrait/logiciel/xchat
 abstrait/logiciel/eclipse
 abstrait/logiciel/gimp
 abstrait/logiciel/libreoffice
