@@ -24,4 +24,6 @@ quan.{0,10}(existe|tu né|(t'|tu).{0,30}cr(éé|ee))|Since when.{0,100}exist|whe
 function/repliques/age
 puis.je.{0,100}(source|code)|sous.quelle.licence|(where |)can i read.{0,100}code|under.{0,100}license
 function/repliques/license
+^(pr(é|e)sente|qui).{0,30}(amarok|ton cr(é|e)ateur|t'a(s) cr(éé|ee))|who.{0,100}(create|is amarok|programmer|creator)
+function/repliques/creator
 
