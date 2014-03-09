@@ -14,3 +14,15 @@ tu.{0,30}te mari(é|er)|(are|can|do).(you|u).{0,100}(marr(y|ied)|celib|have a (b
 function/repliques/celibacy
 (quelle es(t|) ta.{0,30}|(tu.|)as(.tu|).{0,30}) couleur préféré|what is.{0,20}color|what.{0,30}color.{0,30}like
 function/repliques/color
+t(u as|es).{0,30}yeux.{0,30}(--COULEUR--|comment|couleur)|what.{0,100}(kind|color).{0,100}eyes
+function/repliques/eyes
+(tu.|)vas(.tu|) mourrir|tu.mourras|tu.partiras|tu.t.en.iras|(can|do).{0,50}(die|death|dead)
+function/repliques/dead
+((t.|tu |)aimerai(s|)(.tu|) avoir|tu veux) des.{0,30}enfants|do.you.(like|want).{0,50}(child|kid)
+function/repliques/child
+ambition de ta vie|(tu.|)a(s|)(.tu|) des projets|sont tes projets|(have|what).{0,100}(ambition|project)
+function/repliques/project
+(tu.es comment|comment es.tu) (physiquement|en vrai|dans la r(é|e)alit(e|é))|how are you (physically|in.{0,30}reality)
+function/repliques/physic
+(physiquement|en vrai|dans la r(é|e)alit(e|é)) (tu.es comment|comment es.tu)
+function/repliques/physic

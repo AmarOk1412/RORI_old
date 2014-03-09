@@ -26,4 +26,7 @@ puis.je.{0,100}(source|code)|sous.quelle.licence|(where |)can i read.{0,100}code
 function/repliques/license
 ^(pr(é|e)sente|qui).{0,30}(amarok|ton cr(é|e)ateur|t'a(s) cr(éé|ee))|who.{0,100}(create|is amarok|programmer|creator)
 function/repliques/creator
-
+(remet le |)son|sound
+function/repliques/sound
+^(tu peux|)chante(r|)|sing
+function/repliques/song
