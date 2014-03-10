@@ -26,3 +26,39 @@ function/repliques/project
 function/repliques/physic
 (physiquement|en vrai|dans la r(é|e)alit(e|é)) (tu.es comment|comment es.tu)
 function/repliques/physic
+^((et |)mon.{0,30}nom|and.my.name)
+function/repliques/userName
+^(qui (je suis|suis.je)|who.i.am|whoiam|what.{0,20}my name)
+function/repliques/userName
+^((C|c)omment.{0,30}je{0,10}(ap(p|)el(l|)|nom).{0,30})
+function/repliques/userName
+^(tu.{0,30}(jamais|déjà|pas) di(t|s).{0,30}mon.{0,30}nom|you do.{0,10}say my.{0,20}name)
+function/repliques/userName
+j'ai quel.{0,20}(â|a)ge|how old i am
+function/repliques/uage
+^(Q|q)uel.{0,20}(â|a)ge.{0,20}(j'ai)
+function/repliques/uage
+quan.{0,10}(j'existe|suis.je né|(je été cr(éé|ee)))|since when i am create
+function/repliques/uage
+(tu.es|es.tu).{0,30}(une fille|un gar(çon|s)|homme|femme|quel.{0,20}sexe)|Are you a.{0,100}man|(what|have you).{0,100}(gender|sex)
+function/repliques/gender
+(tu as|as.tu) (quel|un).{0,30}sexe
+function/repliques/gender
+^quel.{0,30}ton.{0,30}m(é|e)tier
+function/repliques/job
+^quel{0,30}m(é|e)tier.{0,30}(tu.{0,30}as|tu.{0,30}exerce|exerce.{0,30}tu)
+function/repliques/job
+^tu.{0,30}(as|exerces).{0,30}m(é|e)tier
+function/repliques/job
+^as.tu.{0,30}m(é|e)tier
+function/repliques/job
+(what|have.you|do.you.have).{0,30)job
+function/repliques/job
+besoin de (te nour(r|)ir|manger|miam-miam)|want.{0,100}(eat|food)
+function/repliques/eat
+que penses.tu d(e( la.{0,30}dictature|s lama|s poney)|u (lpp|parti (lama(ï|i)que|pone(ï|i)que)))|what.{0,100}about.(ponie|bronie)
+function/repliques/lpp
+(tu|o(ù|u)).{0,10}habite.{0,10}(tu|o(ù|u))|where.(do.you.live|are.you)
+function/repliques/home
+--INSULTE--
+function/repliques/insulte

@@ -30,3 +30,29 @@ function/repliques/creator
 function/repliques/sound
 ^(tu peux|)chante(r|)|sing
 function/repliques/song
+^(ajoute|apprend) le mot|add the word
+function/repliques/addWord --SENTENCESEND--
+comment.{0,30}va(s|).{0,30}(tu|)|how are you
+function/repliques/humor
+tu.{0,30}va(s|).{0,30}(bien|mal|comment|bof)|are you ok
+function/repliques/humor
+(c|ç)a.va
+function/repliques/humor
+tu (devrais|peu(x|t)|dois).{0,40}r(e|é)p.{0,40}cet.{0,30}ques|you.(must|should).answer
+function/repliques/div
+^((Q|q)uel es(t) ton.{0,30}nom.{0,40})|what.is.your.name|who.are.you|why.RORI|RORI.{0,100}come.from
+function/repliques/roriName
+^((Q|q)ui e(s|t).{0,4}(vous|tu))
+function/repliques/roriName
+^((et |d'o(u|ù).vien(s|t) )ton.{0,30}nom)
+function/repliques/roriName
+^((P|p)ourquoi.{0,40}(RORI|rori|Rori|R.O.R.I.))
+function/repliques/roriName
+^(((C|c)omment|tu).{0,30}t.{0,10}(ap(p|)el(l|)|nom).{0,30})
+function/repliques/roriName
+^((T|t)u.{0,30}(jamais|déjà|pas) di(t|s).{0,30}(ton|votre).{0,30}nom)|you.do.{0,100}say.your.name
+function/repliques/roriName
+(ouvre|lance|joue|test[open|run|recognize).{0,30}arduino
+function/repliques/recoArduino
+(ouvre|lance|naviguons|run|exec|open).{0,30}(onivox|internet)
+function/repliques/onivox
