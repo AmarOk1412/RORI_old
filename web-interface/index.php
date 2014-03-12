@@ -7,6 +7,7 @@
 <html>
 	<head>
 		<title>RORI's Configuration</title>
+                <link rel="icon" type="image/png" href="images/favicon.png">
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="Page de configuration du chatterbot RORI" />
 		<meta name="keywords" content="AmarOk, AmarOk1412, projets, enconn, libre, développer, créer, chatterbot, modulable, open-source, mutli-plateformes" />
@@ -413,7 +414,7 @@ echo(strtoupper($nom).' '.$prenom);
 						</div>
 					</section>
 
-				<!-- About Me -->
+				<!-- About RORI -->
 					<section id="about" class="three">
 						<div class="container">
 
@@ -421,14 +422,9 @@ echo(strtoupper($nom).' '.$prenom);
 								<h2>About RORI</h2>
 							</header>
 
-							<a href="http://ineedchemicalx.deviantart.com/art/Pasadena-357650036" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
+							<img src="images/about.png" width="100%" alt="" />
 							
-							<p>Tincidunt eu elit diam magnis pretium accumsan etiam id urna. Ridiculus 
-							ultricies curae quis et rhoncus velit. Lobortis elementum aliquet nec vitae 
-							laoreet eget cubilia quam non etiam odio tincidunt montes. Elementum sem 
-							parturient nulla quam placerat viverra mauris non cum elit tempus ullamcorper 
-							dolor. Libero rutrum ut lacinia donec curae mus vel quisque sociis nec 
-							ornare iaculis.</p>
+							<p>RORI is a free, flexible, multi-platform chatterbot created in 2011. The chatterbot was totally redesigned in september 2012 and today we are at the version 2. More informations <a href="http://enconn.fr/rori.php">here</a> and the github page <a href="https://github.com/AmarOk1412/RORI">here</a>. The chatterbot is available on Linux and Android but you can compile on windows.</p>
 
 						</div>
 					</section>
