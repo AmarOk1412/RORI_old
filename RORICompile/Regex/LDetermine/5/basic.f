@@ -56,3 +56,11 @@ function/repliques/roriName
 function/repliques/recoArduino
 (ouvre|lance|naviguons|run|exec|open).{0,30}(onivox|internet)
 function/repliques/onivox
+(g(é|e)n(è|e)re|cr(e|é)|generate|create).{0,30}(image|avatar)
+function/repliques/avatar
+(cherche|montre|show|find|seek|search).{0,20}(photo de|picture|photo)
+function/repliques/findPhoto --SENTENCESEND--
+^(film|record|screencast).{0,10}((é|e)cran|bureau|desktop)
+function/repliques/recordDesktop
+^(arr(è|ê|e)te|stop).{0,10}(film|record|screencast).{0,10}((é|e)cran|bureau|)
+function/repliques/stopRecord

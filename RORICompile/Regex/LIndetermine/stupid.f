@@ -28,7 +28,7 @@ function/repliques/physic
 function/repliques/physic
 ^((et |)mon.{0,30}nom|and.my.name)
 function/repliques/userName
-^(qui (je suis|suis.je)|who.i.am|whoiam|what.{0,20}my name)
+^(qui (je suis|suis.je)|who.i.am|whoiam|what.{0,20}my name)|whoami
 function/repliques/userName
 ^((C|c)omment.{0,30}je{0,10}(ap(p|)el(l|)|nom).{0,30})
 function/repliques/userName
@@ -62,3 +62,5 @@ function/repliques/lpp
 function/repliques/home
 --INSULTE--
 function/repliques/insulte
+say.my.name
+function/repliques/sayMyName
