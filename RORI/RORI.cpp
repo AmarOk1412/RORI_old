@@ -165,6 +165,14 @@ void RORI::saySomething(QString message)
 {
     QTextStream qout(stdout);
     qout << message;
+    QFile ftpFile("temp");
+    if(ftpFile.exists())
+        ftpFile.remove();
+    ftpFile.open(QIODevice::WriteOnly);
+    QTextStream out2(&ftpFile);
+    out2<< message;
+    ftpFile.close();
+    QProcess::startDetached("python AndroidConnect/sendToAndroid.py");
     sendMessage(socketAnswer, message);
 }
 
