@@ -64,3 +64,5 @@ function/repliques/findPhoto --SENTENCESEND--
 function/repliques/recordDesktop
 ^(arr(è|ê|e)te|stop).{0,10}(film|record|screencast).{0,10}((é|e)cran|bureau|)
 function/repliques/stopRecord
+film.{0,30}(face|me|moi)|open.{0,30}(camera|webcam|cam)
+function/repliques/webcam
