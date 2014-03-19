@@ -2,6 +2,7 @@
 #include <string>
 
 #include <qdebug.h>
+#include <QIODevice>
 
 #include "RORI.h"
 
@@ -18,6 +19,10 @@ RORI::RORI()
     connect(socketAnswer, SIGNAL(readyRead()), this, SLOT(receiveData()));
     connect(socketAnswer, SIGNAL(disconnected()), this, SLOT(disconnectClient()));
     connect(socketAnswer, SIGNAL(error(QAbstractSocket::SocketError)), this, SLOT(SocketError(QAbstractSocket::SocketError)));
+
+    timerAndroid = new QTimer (this);
+    connect(timerAndroid, SIGNAL(timeout()), this, SLOT(getAndroidConnection()));
+    timerAndroid->start(500);
 
 }
 
@@ -230,3 +235,45 @@ void RORI::workData(QString message)
         semantik->workData(message);
 }
 
+/**
+ * @brief RORI::getAndroidConnection if we have a request from a phone
+ */
+void RORI::getAndroidConnection()
+{
+    QProcess AndroidCo;
+    AndroidCo.execute("python AndroidConnect/androidCo.py");
+    QFile whatSayThePhone("AndroidConnect/androidSay");
+    whatSayThePhone.open(QIODevice::ReadOnly);
+    if(whatSayThePhone.isOpen())
+    {
+        int numberAction = whatSayThePhone.readLine().trimmed().toInt();
+        QFile numActFile("AndroidConnect/numAc");
+        if(numActFile.exists())
+        {
+            numActFile.open(QIODevice::ReadWrite);
+            if(numActFile.readAll().trimmed().toInt() != numberAction)
+            {
+                lastRqAndroid.clear();
+                numActFile.close();
+                numActFile.remove();
+                numActFile.open(QIODevice::ReadWrite);
+                QTextStream out(&numActFile);
+                out << QString::number(numberAction);
+                while(!whatSayThePhone.atEnd())
+                    lastRqAndroid += whatSayThePhone.readLine();
+                if(!lastRqAndroid.isEmpty())
+                {
+                    QString say = "TCHAT:" + lastRqAndroid;
+                    semantik->workData(say);
+                }
+            }
+        }
+        else
+        {
+            numActFile.open(QIODevice::ReadWrite);
+            QTextStream out(&numActFile);
+            out << "0";
+        }
+
+    }
+}

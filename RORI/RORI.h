@@ -24,6 +24,7 @@ private slots:
     int timeBeforeQuestion();
     void ask();
     void workData(QString message);
+    void getAndroidConnection();
 
 private:
     QTcpServer *server;
@@ -32,6 +33,8 @@ private:
     QTcpSocket *socketAnswer;
     int time;
     QTimer *timer;
+    QTimer *timerAndroid;
+    QString lastRqAndroid;
 
     Semantik *semantik;
 };

@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_RORI_t {
-    QByteArrayData data[20];
-    char stringdata[210];
+    QByteArrayData data[21];
+    char stringdata[231];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -48,7 +48,8 @@ QT_MOC_LITERAL(15, 142, 28),
 QT_MOC_LITERAL(16, 171, 5),
 QT_MOC_LITERAL(17, 177, 18),
 QT_MOC_LITERAL(18, 196, 3),
-QT_MOC_LITERAL(19, 200, 8)
+QT_MOC_LITERAL(19, 200, 8),
+QT_MOC_LITERAL(20, 209, 20)
     },
     "RORI\0newConnection\0\0receiveData\0"
     "disconnectClient\0sendAt\0ip\0port\0"
@@ -56,6 +57,7 @@ QT_MOC_LITERAL(19, 200, 8)
     "target\0message\0saySomething\0SocketError\0"
     "QAbstractSocket::SocketError\0error\0"
     "timeBeforeQuestion\0ask\0workData\0"
+    "getAndroidConnection\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -65,7 +67,7 @@ static const uint qt_meta_data_RORI[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      10,   14, // methods
+      11,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -73,16 +75,17 @@ static const uint qt_meta_data_RORI[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   64,    2, 0x08,
-       3,    0,   65,    2, 0x08,
-       4,    0,   66,    2, 0x08,
-       5,    3,   67,    2, 0x08,
-       9,    2,   74,    2, 0x08,
-      13,    1,   79,    2, 0x08,
-      14,    1,   82,    2, 0x08,
-      17,    0,   85,    2, 0x08,
-      18,    0,   86,    2, 0x08,
-      19,    1,   87,    2, 0x08,
+       1,    0,   69,    2, 0x08,
+       3,    0,   70,    2, 0x08,
+       4,    0,   71,    2, 0x08,
+       5,    3,   72,    2, 0x08,
+       9,    2,   79,    2, 0x08,
+      13,    1,   84,    2, 0x08,
+      14,    1,   87,    2, 0x08,
+      17,    0,   90,    2, 0x08,
+      18,    0,   91,    2, 0x08,
+      19,    1,   92,    2, 0x08,
+      20,    0,   95,    2, 0x08,
 
  // slots: parameters
     QMetaType::Void,
@@ -95,6 +98,7 @@ static const uint qt_meta_data_RORI[] = {
     QMetaType::Int,
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString,   12,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -115,6 +119,7 @@ void RORI::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void *
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
         case 8: _t->ask(); break;
         case 9: _t->workData((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 10: _t->getAndroidConnection(); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
@@ -163,13 +168,13 @@ int RORI::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 10)
+        if (_id < 11)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 10;
+        _id -= 11;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 10)
+        if (_id < 11)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 10;
+        _id -= 11;
     }
     return _id;
 }
