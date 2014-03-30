@@ -66,3 +66,7 @@ function/repliques/recordDesktop
 function/repliques/stopRecord
 film.{0,30}(face|me|moi)|open.{0,30}(camera|webcam|cam)
 function/repliques/webcam
+identif(y|ie|i)
+function/repliques/identify
+uptime|since.when.you.{0,20}up
+function/repliques/uptime
