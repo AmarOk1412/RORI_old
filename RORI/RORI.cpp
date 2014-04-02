@@ -24,6 +24,8 @@ RORI::RORI()
     connect(timerAndroid, SIGNAL(timeout()), this, SLOT(getAndroidConnection()));
     timerAndroid->start(500);
 
+    QProcess bootModule;
+    bootModule.startDetached("python config/bootmodule.py");
 }
 
 /**
